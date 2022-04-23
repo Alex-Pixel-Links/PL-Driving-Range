@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Levels/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Telephone_Box.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Driving Range.gd" type="Script" id=4]
+
+[node name="Driving_Range" instance=ExtResource( 1 )]
+script = ExtResource( 4 )
+
+[node name="Telephone_Box" parent="." index="3" instance=ExtResource( 2 )]
+position = Vector2( -2.67273, -540.776 )
