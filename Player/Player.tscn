@@ -18,14 +18,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 9 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 14 ) ],
-"loop": false,
-"name": "swing_left",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 12 ), ExtResource( 10 ) ],
 "loop": false,
 "name": "follow_through_left",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 14 ) ],
+"loop": false,
+"name": "swing_left",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 1 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 5 ) ],
@@ -46,13 +46,17 @@ position = Vector2( -6.5, -13.5 )
 position = Vector2( 6.5, 13.5 )
 
 [node name="Crosshair" type="Node2D" parent="FakePlayer"]
-position = Vector2( 0, -2000 )
+position = Vector2( 0, -1800 )
 scale = Vector2( 0.1, 0.1 )
 
 [node name="Sprite" type="Sprite" parent="FakePlayer/Crosshair"]
 texture = ExtResource( 2 )
 
 [node name="CrosshairCamera" type="Camera2D" parent="FakePlayer/Crosshair"]
+limit_left = -1900
+limit_top = -3264
+limit_right = 1900
+limit_bottom = 335
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )

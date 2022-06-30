@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Tileset/Flora.png" type="Texture" id=1]
+[ext_resource path="res://Flora/Tree.gd" type="Script" id=2]
+
+[sub_resource type="PhysicsMaterial" id=1]
+bounce = 0.5
+
+[node name="Tree" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 4
+physics_material_override = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( -16, 64, 0, 0 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -24, 16, -13, 24, -21, 44, 22, 44, 13, 24, 24, 16, 40, 0, 40, -16, 24, -32, 11, -48, -11, -48, -24, -32, -40, -16, -40, 0 )

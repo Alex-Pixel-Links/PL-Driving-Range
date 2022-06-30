@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Objects/Postbox.gd" type="Script" id=1]
+
+[sub_resource type="PhysicsMaterial" id=2]
+bounce = 1.0
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.77816, 13.1226 )
 
-[node name="Postbox" type="StaticBody2D"]
+[node name="Postbox" type="RigidBody2D" groups=["postbox"]]
+collision_layer = 0
+collision_mask = 8
+physics_material_override = SubResource( 2 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

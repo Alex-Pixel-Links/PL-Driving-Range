@@ -1,13 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Tileset/Targets.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Other/Five_Points.png" type="Texture" id=2]
 [ext_resource path="res://Objects/Telephone_Box.gd" type="Script" id=3]
 
+[sub_resource type="PhysicsMaterial" id=2]
+bounce = 0.2
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.94058, 15.0911 )
 
-[node name="Telephone_Box" type="StaticBody2D"]
+[node name="Telephone_Box" type="RigidBody2D" groups=["telephone_box"]]
+collision_layer = 0
+collision_mask = 8
+physics_material_override = SubResource( 2 )
+gravity_scale = 0.0
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
